@@ -213,7 +213,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: 100vh;
 }
 
 .section__pic-container {
@@ -245,6 +245,20 @@ section {
   color: var(--secondary-color);
   font-size: 3rem;
   text-align: center;
+}
+
+.name-title{
+     /* Primero define un tamaño de fuente apropiado */
+     font-size: 3rem;
+    
+     /* Gradiente en el texto */
+     background: linear-gradient(90deg, #FF8A00, #DA1B60);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ 
+     /* Asegúrate de centrarlo también si quieres */
+     text-align: center;
 }
 
 #socials-container {
