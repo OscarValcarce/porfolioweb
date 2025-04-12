@@ -15,10 +15,12 @@
   --button-border: rgb(53, 53, 53) 0.1rem solid;
   --button-border-2: rgb(255, 255, 255) 0.1rem solid;
   --container-border: rgb(163, 163, 163);
+  
 }
 
 /* Dark Mode */
 [theme="dark"] {
+  --button-color: rgb(#f58d06);
   --primary-color: black;
   --primary-color-2: rgb(39, 39, 39);
   --primary-color-3: rgb(74, 74, 74);
@@ -234,11 +236,12 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .section__text__p2 {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .title {
@@ -249,31 +252,35 @@ section {
 
 .name-title{
      /* Primero define un tamaño de fuente apropiado */
-     font-size: 3rem;
+     font-size: 4rem;
     
      /* Gradiente en el texto */
-     background: linear-gradient(90deg, #FF8A00, #DA1B60);
+     /*background: linear-gradient(90deg, #FF8A00, #DA1B60);*/
+     background: linear-gradient(45deg, #fcdbc5, #fa8e00);
      background-clip: text;
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  
      /* Asegúrate de centrarlo también si quieres */
      text-align: center;
+     
 }
 
 #socials-container {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 /* ICONS */
 
 .icon {
   cursor: pointer;
-  height: 2rem;
+  height: 2.5rem;
 }
+
+
 
 /* BUTTONS */
 
@@ -288,8 +295,50 @@ section {
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
+  margin-bottom: 2rem;
   border-radius: 2rem;
+  position: relative;
+  background: transparent;
+  
 }
+
+.btn-special{
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+  position: relative;
+  background: transparent;
+  border: 0.15rem solid rgb(231, 150, 102);
+  color: rgb(231, 142, 90);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: index 2;
+}
+
+.btn-special::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(231, 142, 90);
+  z-index: -1;
+  transition: all 500ms ease;
+  clip-path: circle(0% at 50% 50%);
+}
+
+.btn-special:hover::after{
+  clip-path: circle(100% at 50% 50%); 
+}
+
+.btn-special:hover{
+  color:rgb(44, 44, 44);
+}
+
 
 .btn-color-1,
 .btn-color-2 {
@@ -323,6 +372,16 @@ section {
 
 .btn-container {
   gap: 1rem;
+}
+
+.btn-color-2::after{
+  
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(255, 94, 0);
 }
 
 /* ABOUT SECTION */
