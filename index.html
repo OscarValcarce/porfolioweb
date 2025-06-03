@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,28 +10,23 @@
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">OVG</div>
+    <!-- Scroll-to-top button -->
+    <button id="scrollToTop" title="Back to top">↑</button>
+
+    <nav id="desktop-nav" class="fade-element">
+      <div class="logo">O</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
-            <img
-              id="modeToggle"
-              class="icon color-icon"
-              src="./assets/theme_light.png"
-              src-light="./assets/theme_light.png"
-              src-dark="./assets/theme_dark.png"
-              alt="Color them icon"
-            />
-          </li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
+
+    <nav id="hamburger-nav" class="fade-element">
       <div class="logo">Óscar</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
@@ -40,27 +36,18 @@
         </div>
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-          <li>
-            <img
-              id="modeToggle2"
-              class="icon color-icon"
-              src="./assets/theme_light.png"
-              src-light="./assets/theme_light.png"
-              src-dark="./assets/theme_dark.png"
-              alt="Color them icon"
-            />
-          </li>
         </div>
       </div>
     </nav>
-    <section id="profile">
+
+    <section id="profile" class="fade-element">
       <div class="section__text">
-        <!--<p class="section__text__p1">Hello, I'm</p>-->
         <h1 class="title name-title">Hi, I'm Óscar</h1>
-        <p class="section__text__p2">CS & AI Student</p>
+        <p class="section__text__p2">CS &amp; AI Student</p>
         <div class="btn-container">
           <button
             class="btn btn-color-1"
@@ -68,23 +55,19 @@
           >
             Download CV
           </button>
-          <button class="btn-special" onclick="location.href='./#contact'">
+          <button class="btn-special" onclick="location.href='#contact'">
             Contact Info
           </button>
         </div>
         <div id="socials-container">
           <img
             src="./assets/linkedin_light.png"
-            src-light="./assets/linkedin_light.png"
-            src-dark="./assets/linkedin_dark.png"
             alt="My LinkedIn profile"
             class="icon linkedin-icon"
             onclick="location.href='https://www.linkedin.com/in/oscar-valcarce-gonzalez'"
           />
           <img
             src="./assets/github_light.png"
-            src-light="./assets/github_light.png"
-            src-dark="./assets/github_dark.png"
             alt="My github profile"
             class="icon github-icon"
             onclick="location.href='https://github.com/OscarValcarce'"
@@ -92,335 +75,339 @@
         </div>
       </div>
     </section>
-    <section id="about">
+
+    <section id="about" class="fade-element">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience_light.png"
-                src-light="./assets/experience_light.png"
-                src-dark="./assets/experience_dark.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education_light.png"
-                src-light="./assets/education_light.png"
-                src-dark="./assets/education_dark.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
-            </p>
-          </div>
+      <div class="about-details-container">
+        <div class="text-container about-zoom fade-element">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
+            reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem
+            nobis, nihil esse debitis maxime facere minus sint delectus velit in eos
+            quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum
+            cum laboriosam corrupti quidem, reiciendis ea magnam? Nulla, impedit fuga!
+          </p>
         </div>
       </div>
-      <img
-        src="./assets/arrow_light.png"
-        src-light="./assets/arrow_light.png"
-        src-dark="./assets/arrow_dark.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
-    <section id="experience">
+
+    <section id="experience" class="fade-element">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Skills & Technologies</h1>
       <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+        <!-- AI Related Card -->
+        <div class="details-container skill-card fade-element">
+          <h2 class="experience-sub-title">AI Related</h2>
+          <div class="ai-grid">
+            <!-- Machine Learning Subsection -->
+            <div class="ai-section">
+              <h3>Machine Learning</h3>
+              <ul>
+                <li>
+                  <img src="./assets/scikit-learn_logo.png" alt="" class="icon" />
+                  Scikit-Learn
+                </li>
+                <li>
+                  <img src="./assets/Tensorflow_logo.png" alt="" class="icon" />
+                  TensorFlow
+                </li>
+                <li>
+                  <img src="./assets/pytorch_logo.png" alt="" class="icon" />
+                  PyTorch
+                </li>
+                <li>
+                  <img src="./assets/keras.png" alt="" class="icon" />
+                  Keras
+                </li>
+                <li>
+                  <img src="./assets/XGB.png" alt="" class="icon" />
+                  XGBoost
+                </li>
+              </ul>
+            </div>
+
+            <!-- Computer Vision Subsection -->
+            <div class="ai-section">
+              <h3>Computer Vision</h3>
+              <ul>
+                <li>
+                  <img src="./assets/openCV.png" alt="" class="icon" />
+                  OpenCV
+                </li>
+                <li>
+                  <img src="./assets/pytorch_logo.png" alt="" class="icon" />
+                  torchvision
+                </li>
+              </ul>
+            </div>
+
+            <!-- NLP Subsection -->
+            <div class="ai-section">
+              <h3>NLP</h3>
+              <ul>
+                <li>
+                  <img src="./assets/nltk.png" alt="" class="icon" />
+                  NLTK
+                </li>
+                <li>
+                  <img src="./assets/SpaCy_logo.svg.png" alt="" class="icon" />
+                  SpaCy
+                </li>
+                <li>
+                  <img src="./assets/huggingface-color.png" alt="" class="icon" />
+                  Hugging Face
+                </li>
+                <li>
+                  <img src="./assets/gensim.png" alt="" class="icon" />
+                  Gensim
+                </li>
+              </ul>
+            </div>
+
+            <!-- Extra Subsection -->
+            <div class="ai-section">
+              <h3>Extra</h3>
+              <ul>
+                <li>
+                  <img src="./assets/numpy.png" alt="" class="icon" />
+                  NumPy
+                </li>
+                <li>
+                  <img src="./assets/pandas.png" alt="" class="icon" />
+                  Pandas
+                </li>
+                <li>
+                  <img src="./assets/matplotlib-logo.svg.png" alt="" class="icon" />
+                  Matplotlib
+                </li>
+                <li>
+                  <img src="./assets/plotly-logo-square.png" alt="" class="icon" />
+                  Plotly
+                </li>
+                <li>
+                  <img src="./assets/scipy_logo300x300.png" alt="" class="icon" />
+                  SciPy
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark_light.png"
-                  src-light="./assets/checkmark_light.png"
-                  src-dark="./assets/checkmark_dark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+        </div>
+
+        <!-- Programming Languages Card -->
+        <div class="details-container skill-card fade-element">
+          <h2 class="experience-sub-title">Programming Languages</h2>
+          <div class="ai-grid">
+            <div class="ai-section prog-section">
+              <ul class="prog-list">
+                <li>
+                  <a href="https://www.python.org/" target="_blank">
+                    <img src="./assets/python.png" alt="Python" class="icon" />
+                    <span>Python</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://isocpp.org/" target="_blank">
+                    <img src="./assets/C++.png" alt="C++" class="icon" />
+                    <span>C++</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.java.com/" target="_blank">
+                    <img src="./assets/java.png" alt="Java" class="icon" />
+                    <span>Java</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://en.cppreference.com/w/c" target="_blank">
+                    <img src="./assets/C.png" alt="C" class="icon" />
+                    <span>C</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.r-project.org/" target="_blank">
+                    <img src="./assets/R.png" alt="R" class="icon" />
+                    <span>R</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.mysql.com/" target="_blank">
+                    <img src="./assets/sql.png" alt="SQL" class="icon" />
+                    <span>SQL</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development Card -->
+        <div class="details-container skill-card fade-element">
+          <h2 class="experience-sub-title">Web Development</h2>
+          <div class="web-grid">
+            <div class="web-section">
+              <h3>Frontend & Styling</h3>
+              <ul>
+                <li>
+                  <img src="./assets/html.png" alt="" class="icon" />
+                  HTML5
+                </li>
+                <li>
+                  <img src="./assets/CSS3_logo.svg.png" alt="" class="icon" />
+                  CSS3
+                </li>
+                <li>
+                  <img src="./assets/JavaScript-logo.png" alt="" class="icon" />
+                  JavaScript
+                </li>
+                <li>
+                  <img src="./assets/Typescript_logo_2020.svg.png" alt="" class="icon" />
+                  TypeScript
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow_light.png"
-        src-light="./assets/arrow_light.png"
-        src-dark="./assets/arrow_dark.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
-    <section id="projects">
+
+    <section id="projects" class="fade-element">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
+
+      <div class="projects-grid">
+        <div class="project-card fade-element">
+          <h3 class="project-card-title">Sentiment Analyzer</h3>
+          <h4 class="project-card-subtitle">NLP & Machine Learning</h4>
+          <p class="project-card-description">
+            Herramienta que procesa texto para determinar el sentimiento (positivo,
+            negativo o neutral). Utiliza técnicas de preprocesamiento de texto y
+            modelos de clasificación.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">NLTK</span>
+            <span class="tech-badge">scikit-learn</span>
+            <span class="tech-badge">pandas</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
+        </div>
+
+        <div class="project-card fade-element">
+          <h3 class="project-card-title">Image Classifier</h3>
+          <h4 class="project-card-subtitle">Computer Vision & Deep Learning</h4>
+          <p class="project-card-description">
+            Clasifica imágenes en distintas categorías usando redes neuronales
+            convolucionales. Incluye fine-tuning de modelos pre-entrenados sobre
+            conjuntos de datos personalizados.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">Keras</span>
+            <span class="tech-badge">OpenCV</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
+        </div>
+
+        <div class="project-card fade-element">
+          <h3 class="project-card-title">Chatbot Inteligente</h3>
+          <h4 class="project-card-subtitle">NLP & Deep Learning</h4>
+          <p class="project-card-description">
+            Chatbot que responde preguntas y lleva conversaciones básicas. Emplea
+            modelos de lenguaje y embeddings para entender el contexto y generar
+            respuestas coherentes.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">spaCy</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">Flask</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-element">
+          <h3 class="project-card-title">Dashboard de Datos</h3>
+          <h4 class="project-card-subtitle">Visualización & Backend</h4>
+          <p class="project-card-description">
+            Panel interactivo para mostrar métricas en tiempo real. Integra API REST
+            para obtener datos y gráficas dinámicas con librerías de visualización.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Dash</span>
+            <span class="tech-badge">Plotly</span>
+            <span class="tech-badge">PostgreSQL</span>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow_light.png"
-        src-light="./assets/arrow_light.png"
-        src-dark="./assets/arrow_dark.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
-    <section id="contact">
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="fade-element">
+      <p class="section__text__p1">Verified Credentials</p>
+      <h1 class="title">Certifications</h1>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img src="./assets/coursera_badge.png" alt="Coursera ML Badge" class="cert-icon" />
+          <h3 class="cert-title">Machine Learning - Coursera</h3>
+          <p class="cert-issuer">Issued by Stanford University</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/XXXXXX" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+        <div class="cert-card">
+          <img src="./assets/udemy_badge.png" alt="Udemy Python Badge" class="cert-icon" />
+          <h3 class="cert-title">Complete Python Bootcamp</h3>
+          <p class="cert-issuer">Issued by Jose Portilla</p>
+          <a href="https://www.udemy.com/certificate/XXXXXX" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+        <div class="cert-card">
+          <img src="./assets/aws_badge.png" alt="AWS Cloud Practitioner" class="cert-icon" />
+          <h3 class="cert-title">AWS Certified Cloud Practitioner</h3>
+          <p class="cert-issuer">Issued by Amazon Web Services</p>
+          <a href="https://www.aws.training/CertificationVerification?cert=XXXXXX" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-element">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
-        <div class="contact-info-container">
+        <div class="contact-info-container fade-element">
           <img
             src="./assets/email_light.png"
-            src-light="./assets/email_light.png"
-            src-dark="./assets/email_dark.png"
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+          <p><a href="mailto:examplemail@gmail.com">Mail</a></p>
         </div>
-        <div class="contact-info-container">
+        <div class="contact-info-container fade-element">
           <img
             src="./assets/linkedin_light.png"
-            src-light="./assets/linkedin_light.png"
-            src-dark="./assets/linkedin_dark.png"
             alt="My LinkedIn profile"
             class="icon linkedin-icon"
             onclick="location.href='https://www.linkedin.com/in/oscar-valcarce-gonzalez'"
           />
-          <p><a href="https://www.linkedin.com/in/oscar-valcarce-gonzalez">LinkedIn</a></p>
+          <p>
+            <a href="https://www.linkedin.com/in/oscar-valcarce-gonzalez">LinkedIn</a>
+          </p>
         </div>
       </div>
     </section>
-    <footer>
+
+    <footer class="fade-element">
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; All Rights Reserved.</p>
+      <p>Copyright © All Rights Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

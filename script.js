@@ -1,53 +1,64 @@
+// script.js
+
+// Toggle hamburger menu
 function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-  }
-  
-  // Dark / light mode
-  
-  const btn = document.getElementById("modeToggle");
-  const btn2 = document.getElementById("modeToggle2");
-  const themeIcons = document.querySelectorAll(".icon");
-  const currentTheme = localStorage.getItem("theme");
-  
-  if (currentTheme === "dark") {
-    setDarkMode();
-  }
-  
-  btn.addEventListener("click", function () {
-    setTheme();
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
+
+// Fade-in on load
+window.addEventListener("load", () => {
+  // Activar transición de opacidad en <body>
+  document.body.classList.add("loaded");
+
+  // IntersectionObserver para fade-element
+  const faders = document.querySelectorAll(".fade-element");
+  const options = {
+    threshold: 0.2,
+  };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
   });
-  
-  btn2.addEventListener("click", function () {
-    setTheme();
-  });
-  
-  function setTheme() {
-    let currentTheme = document.body.getAttribute("theme");
-  
-    if (currentTheme === "dark") {
-      setLightMode();
-    } else {
-      setDarkMode();
+});
+
+// Scroll-to-top behavior con fade-in y fade-out
+const scrollBtn = document.getElementById("scrollToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    if (scrollBtn.style.display !== "block") {
+      scrollBtn.style.display = "block";
+      scrollBtn.style.opacity = "0";
+      // Pequeño retraso para disparar la transición
+      setTimeout(() => {
+        scrollBtn.style.opacity = "1";
+      }, 10);
+    }
+  } else {
+    if (scrollBtn.style.display === "block") {
+      scrollBtn.style.opacity = "0";
+      // Después de la transición, ocultar el botón
+      setTimeout(() => {
+        scrollBtn.style.display = "none";
+      }, 300);
     }
   }
-  
-  function setDarkMode() {
-    document.body.setAttribute("theme", "dark");
-    localStorage.setItem("theme", "dark");
-  
-    themeIcons.forEach((icon) => {
-      icon.src = icon.getAttribute("src-dark");
-    });
-  }
-  
-  function setLightMode() {
-    document.body.removeAttribute("theme");
-    localStorage.setItem("theme", "light");
-  
-    themeIcons.forEach((icon) => {
-      icon.src = icon.getAttribute("src-light");
-    });
-  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
