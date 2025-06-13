@@ -30,6 +30,10 @@
   box-sizing: border-box;
 }
 
+body.no-scroll {
+  overflow: hidden;          /* 3- Evita hacer scroll en la página de fondo */
+}
+
 /* Fade-in on load */
 body {
   font-family: "Poppins", sans-serif;
@@ -115,6 +119,38 @@ nav#desktop-nav {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
+}
+
+.logo {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-orange);
+  left: 0;
+  bottom: -6px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: var(--accent-link);
+}
+
+.logo:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.logo.clicked::after {
+  transform: scaleX(0) !important;
 }
 
 /* Hamburger menu (mobile) */
@@ -277,7 +313,10 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  
 }
+
+
 
 .section__text {
   text-align: center;
@@ -413,6 +452,7 @@ section {
   align-items: center;
   gap: 2rem;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .about-details-container {
@@ -613,7 +653,7 @@ section {
 }
 
 .project-card-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--accent-orange);
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -639,12 +679,42 @@ section {
 .tech-badge {
   background-color: var(--badge-bg);
   color: var(--accent-orange);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* Variantes de tech-badge por lenguaje */
+.tech-badge--python {
+  background-color: #ffe28a;   /* amarillo suave */
+  color: #d28b00;
+}
+
+.tech-badge--java {
+  background-color: #ffb199;   /* rojo-anaranjado claro */
+  color: #c13c00;
+}
+
+.tech-badge--c {
+  background-color: #b9d8ff;   /* azul claro */
+  color: #0054b6;
+}
+
+.tech-badge--bash {
+  background-color: #bff2c1;   /* verde suave */
+  color: #007b2e;
+}
+
+/* Animacion typewriter */
+#typewriter-text {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
 
 /* ------- CERTIFICATIONS (Verified Credentials) ------- */
 #certifications {
@@ -773,56 +843,85 @@ footer .nav-links a:hover {
   color: var(--accent-link);
 }
 
-/* ------- MEDIA QUERIES ------- */
-@media (max-width: 768px) {
-  .name-title {
-    font-size: 3.5rem;
-  }
-  #profile {
-    padding-top: 2rem;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .ai-grid,
-  .web-grid {
-    grid-template-columns: 1fr;
-  }
-  .prog-list {
-    gap: 1rem;
-  }
-  #scrollToTop {
-    bottom: 1rem;
-    right: 1rem;
-  }
+
+
+/* ------- MODAL ------- */
+.modal {
+  /* — el overlay SIEMPRE está en el DOM, pero “oculto” — */
+  position: fixed;
+  inset: 0;
+  display: flex;                     /* ya no usamos display:none → display:flex */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  /* estado oculto */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  /* fondo + blur (0 px) */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0px);
+
+  /* transiciones suaves */
+  transition:
+    backdrop-filter 0.5s ease,
+    background      0.5s ease,
+    opacity         0.5s ease;
 }
 
-@media (max-width: 480px) {
-  .name-title {
-    font-size: 2.5rem;
-  }
-  .btn {
-    width: 6rem;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-  }
-  .btn-special {
-    width: 6rem;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .ai-grid,
-  .web-grid {
-    grid-template-columns: 1fr;
-  }
-  .prog-list {
-    gap: 1rem;
-  }
-  #scrollToTop {
-    bottom: 1rem;
-    right: 1rem;
-  }
+/* estado visible */
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  /* blur ligero y fondo algo más oscuro */
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Ventana interna (misma animación que ya tenías) */
+.modal-content {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 1100px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(-24px) scale(0.96);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.modal.open .modal-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Asegura que las tarjetas parezcan clicables */
+.project-card {
+  cursor: pointer;
+}
+
+/*Footer*/
+/*copytight*/
+.copy-text {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: #c0baba;
+  margin-top: 0px;
 }
