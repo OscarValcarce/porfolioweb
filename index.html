@@ -11,7 +11,9 @@
   </head>
   <body>
     <!-- Scroll-to-top button -->
-    <button id="scrollToTop" title="Back to top">↑</button>
+    <button id="scrollToTop" title="Back to top">
+      <img src="assets/arrow-up.png" alt="Back to top" />
+    </button>
 
     <nav id="desktop-nav" class="fade-element">
       <div class="logo">O</div>
@@ -46,7 +48,7 @@
 
     <section id="profile" class="fade-element">
       <div class="section__text">
-        <h1 class="title name-title">Hi, I'm Óscar</h1>
+        <h1 class="title name-title">Óscar's Portfolio</h1>
         <p class="section__text__p2">CS &amp; AI Student</p>
         <div class="btn-container">
           <button
@@ -58,20 +60,6 @@
           <button class="btn-special" onclick="location.href='#contact'">
             Contact Info
           </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin_light.png"
-            alt="My LinkedIn profile"
-            class="icon linkedin-icon"
-            onclick="location.href='https://www.linkedin.com/in/oscar-valcarce-gonzalez'"
-          />
-          <img
-            src="./assets/github_light.png"
-            alt="My github profile"
-            class="icon github-icon"
-            onclick="location.href='https://github.com/OscarValcarce'"
-          />
         </div>
       </div>
     </section>
@@ -271,6 +259,7 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="fade-element">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
@@ -368,42 +357,7 @@
       </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="fade-element">
-      <p class="section__text__p1">Verified Credentials</p>
-      <h1 class="title">Certifications</h1>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <img src="./assets/yale.jpeg" alt="Coursera ML Badge" class="cert-icon" />
-          <h3 class="cert-title">Financial Markets (Hons)</h3>
-          <p class="cert-issuer">Issued by Yale University</p>
-          
-        </div>
-        <div class="cert-card">
-          <img src="./assets/hong.jpeg" alt="Udemy Python Badge" class="cert-icon" />
-          <h3 class="cert-title">Python and Statistics for Financial Analysis</h3>
-          <p class="cert-issuer">Issued by The Hong Kong University of Science and Technology</p>
-          
-        </div>
-        <div class="cert-card">
-          <img src="./assets/nyu.png" alt="AWS Cloud Practitioner" class="cert-icon" />
-          <h3 class="cert-title">Fundamentals of Machine Learning in Finance</h3>
-          <p class="cert-issuer">Issued by New York University</p>
-        </div>
-        <div class="cert-card">
-          <img src="./assets/IE_University_logo.svg" alt="AWS Cloud Practitioner" class="cert-icon" />
-          <h3 class="cert-title">Introduction to Data Science</h3>
-          <p class="cert-issuer">Issued by IE University</p>
-        </div>
-        <div class="cert-card">
-          <img src="./assets/Logo_URJC.svg (1).png" alt="AWS Cloud Practitioner" class="cert-icon" />
-          <h3 class="cert-title">Big Data & Analytics</h3>
-          <p class="cert-issuer">Issued by Rey Juan Carlos University</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modals: pega esto justo antes de tu <section id="certifications"> -->
+    <!-- Modals -->
     <div id="modal-1" class="modal">
       <div class="modal-content">
         <span class="modal-close">&times;</span>
@@ -557,31 +511,99 @@
     </div>
 
 
-    <section id="contact" class="fade-element">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container fade-element">
-          <img
-            src="./assets/email_light.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:examplemail@gmail.com">Mail</a></p>
+    <!-- Certifications Section -->
+    <section id="certifications" class="fade-element">
+      <p class="section__text__p1">Verified Credentials</p>
+      <h1 class="title">Certifications</h1>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img src="./assets/yale.jpeg" alt="Coursera ML Badge" class="cert-icon" />
+          <h3 class="cert-title">Financial Markets (Hons)</h3>
+          <p class="cert-issuer">Issued by Yale University</p>
+          
         </div>
-        <div class="contact-info-container fade-element">
-          <img
-            src="./assets/linkedin_light.png"
-            alt="My LinkedIn profile"
-            class="icon linkedin-icon"
-            onclick="location.href='https://www.linkedin.com/in/oscar-valcarce-gonzalez'"
-          />
-          <p>
-            <a href="https://www.linkedin.com/in/oscar-valcarce-gonzalez">LinkedIn</a>
-          </p>
+        <div class="cert-card">
+          <img src="./assets/hong.jpeg" alt="Udemy Python Badge" class="cert-icon" />
+          <h3 class="cert-title">Python and Statistics for Financial Analysis</h3>
+          <p class="cert-issuer">Issued by The Hong Kong University of Science and Technology</p>
+          
+        </div>
+        <div class="cert-card">
+          <img src="./assets/nyu.png" alt="AWS Cloud Practitioner" class="cert-icon" />
+          <h3 class="cert-title">Fundamentals of Machine Learning in Finance</h3>
+          <p class="cert-issuer">Issued by New York University</p>
+        </div>
+        <div class="cert-card">
+          <img src="./assets/IE_University_logo.svg" alt="AWS Cloud Practitioner" class="cert-icon" />
+          <h3 class="cert-title">Introduction to Data Science</h3>
+          <p class="cert-issuer">Issued by IE University</p>
+        </div>
+        <div class="cert-card">
+          <img src="./assets/Logo_URJC.svg (1).png" alt="AWS Cloud Practitioner" class="cert-icon" />
+          <h3 class="cert-title">Big Data & Analytics</h3>
+          <p class="cert-issuer">Issued by Rey Juan Carlos University</p>
         </div>
       </div>
     </section>
+    <!-- Awards section -->
+    <section id="awards" class="fade-element">
+      <p class="section__text__p1">Recognition</p>
+      <h1 class="title">Awards</h1>
+      <div class="awards-list">
+        <div class="award-minimal">
+          <div class="award-minimal-icon teal-bg">
+            <img src="./assets/google.png" alt="Best Student Award" />
+          </div>
+          <div class="award-minimal-content">
+            <h3 class="award-minimal-title">1st place Reinforcement Learning Hackathon</h3>
+            <span class="award-minimal-org">Google Developers</span>
+            <p class="award-minimal-desc">Outstanding academic performance and research contributions, 2024.</p>
+          </div>
+        </div>
+        <div class="award-minimal">
+          <div class="award-minimal-icon orange-bg">
+            <img src="./assets/Logo_URJC.svg (1).png" alt="AI Challenge Winner" />
+          </div>
+          <div class="award-minimal-content">
+            <h3 class="award-minimal-title">2nd place NLP model for political ideology classification</h3>
+            <span class="award-minimal-org">Rey Juan Carlos University</span>
+            <p class="award-minimal-desc">Winner of the 2023 AI Innovation Challenge for an original ML solution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section id="contact" class="fade-element contact-section">
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+
+  <div class="contact-phrase">
+    <span>Don't hesitate to contact me for project ideas, collaborations or just to connect!</span>
+  </div>
+
+  <div class="contact-form-container">
+    <div class="contact-info-card">
+      <img src="./assets/email_light.png" alt="Email icon" class="icon contact-icon email-icon" />
+      <a class="contact-link" href="mailto:examplemail@gmail.com">examplemail@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="contact-socials">
+    <span class="contact-social-label">Find me on</span>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/oscar-valcarce-gonzalez" target="_blank" title="LinkedIn" class="contact-social-link">
+        <img src="./assets/linkedin_light.png" alt="My LinkedIn profile" class="icon linkedin-icon" />
+      </a>
+      <a href="https://github.com/OscarValcarce" target="_blank" title="GitHub" class="contact-social-link">
+        <img src="./assets/github_light.png" alt="My github profile" class="icon github-icon" />
+      </a>
+      <a href="mailto:examplemail@gmail.com" title="Email" class="contact-social-link">
+        <img src="./assets/email_light.png" alt="Email icon" class="icon email-icon" />
+      </a>
+    </div>
+  </div>
+</section>
 
     <footer class="fade-element">
       <nav>

@@ -249,10 +249,16 @@ nav#desktop-nav {
   box-shadow: 0 4px 12px var(--card-shadow);
   transition: opacity 0.3s ease;
   z-index: 100;
+
 }
 
 #scrollToTop:hover {
   background-color: #006666; /* tono más oscuro de terciario */
+}
+
+#scrollToTop img {
+  width: 18px;
+  height: 22px;
 }
 
 /* ------- SECCIONES GENERALES ------- */
@@ -324,7 +330,7 @@ section {
 
 .name-title {
   font-size: 5rem;
-  background: linear-gradient(45deg, #fcdbc5, #fa8e00);
+  background: linear-gradient(85deg, #fa8e00, #ff3c00);
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -348,14 +354,14 @@ section {
 .section__text__p2 {
   font-size: 1.5rem;
   color: var(--text-secondary);
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
 /* Botones centrados */
 .btn-container {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
@@ -386,13 +392,13 @@ section {
 }
 
 .btn-color-1:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.8);
 }
 
 .btn-color-2 {
   background: none;
   color: var(--text-secondary);
-  border: var(--border-light) 0.1rem solid;
+  border: var(--border-light) 0.2rem solid;
 }
 
 .btn-color-2:hover {
@@ -924,4 +930,230 @@ footer .nav-links a:hover {
   font-size: 10px;
   color: #c0baba;
   margin-top: 0px;
+}
+
+/* Contact Section Enhancement */
+.contact-section {
+  padding-bottom: 4rem;
+  background: linear-gradient(120deg, #fff 70%, #fff3e7 100%);
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 6px 36px 0 rgba(255,110,0,0.04);
+}
+
+.contact-phrase {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--accent-orange);
+  margin-bottom: 2.2rem;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  padding: 0 2rem;
+  animation: fadeInUp 1s 0.2s both;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px var(--card-shadow);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: transform 0.22s cubic-bezier(.38,1.14,.32,1.02);
+  border-left: 4px solid var(--accent-orange);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-3px) scale(1.022);
+  box-shadow: 0 6px 24px var(--card-shadow);
+  background: #fff8f1;
+}
+
+.contact-link {
+  color: var(--accent-link);
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.1px;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+.contact-link:hover {
+  color: var(--accent-tertiary);
+  text-decoration: underline;
+}
+
+/* Socials Bar */
+.contact-socials {
+  margin-top: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s 0.4s both;
+}
+
+.contact-social-label {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px var(--card-shadow);
+  width: 48px;
+  height: 48px;
+  transition: box-shadow 0.3s, transform 0.2s;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.contact-social-link:hover {
+  box-shadow: 0 8px 24px var(--badge-bg);
+  border: 2px solid var(--accent-orange);
+  transform: translateY(-4px) scale(1.11) rotate(-3deg);
+  background: #fff9f4;
+}
+
+.contact-social-link .icon {
+  width: 28px;
+  height: 28px;
+  transition: filter 0.2s;
+}
+
+/* Responsive for mobiles */
+@media (max-width: 600px) {
+  .contact-form-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contact-info-card {
+    padding: 1rem 0.6rem;
+    font-size: 1rem;
+  }
+  .contact-section {
+    padding: 4rem 0.5rem 2rem;
+  }
+  .contact-phrase {
+    font-size: 1.04rem;
+    padding: 0 0.2rem;
+  }
+  .social-icons {
+    gap: 1.2rem;
+  }
+}
+
+/* --------- MINIMALIST AWARDS SECTION --------- */
+#awards {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 1.2rem 2.5rem 1.2rem;
+  margin: 3rem auto;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 1px 12px var(--card-shadow);
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.1rem;
+  align-items: stretch;
+  margin-top: 2.1rem;
+}
+
+.award-minimal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8ed;
+}
+
+.award-minimal:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.award-minimal-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.1rem;
+  background: var(--accent-tertiary, #00808012);
+}
+.teal-bg {
+  background: #e6faf7;
+}
+.orange-bg {
+  background: #fff5e7;
+}
+.award-minimal-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.award-minimal-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-tertiary);
+  margin-bottom: 0.15rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.1px;
+}
+
+.award-minimal-org {
+  font-size: 0.98rem;
+  color: var(--accent-orange);
+  margin-bottom: 0.1rem;
+  font-weight: 500;
+}
+
+.award-minimal-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+/* Responsive: centrado y menos padding */
+@media (max-width: 500px) {
+  #awards {
+    padding: 2rem 0.4rem;
+    max-width: 97vw;
+  }
+  .awards-list {
+    gap: 1.3rem;
+  }
+  .award-minimal {
+    padding-bottom: 0.8rem;
+  }
 }
