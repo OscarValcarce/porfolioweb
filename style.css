@@ -82,13 +82,10 @@ a:hover {
 }
 
 /* ------- NAVBAR ------- */
-nav,
-.nav-links {
+
+#desktop-nav {
   display: flex;
   align-items: center;
-}
-
-nav#desktop-nav {
   justify-content: space-between;
   padding: 0 2rem;
   height: 70px;
@@ -100,10 +97,13 @@ nav#desktop-nav {
 }
 
 .nav-links {
+  display: flex;
   gap: 2rem;
   list-style: none;
   font-size: 1rem;
+  align-items: center;
 }
+
 
 .nav-links a {
   color: var(--text-primary);
@@ -155,7 +155,18 @@ nav#desktop-nav {
 
 /* Hamburger menu (mobile) */
 #hamburger-nav {
-  display: none; /* visible en pantallas pequeñas */
+  display: flex; /* visible en pantallas pequeñas */
+  align-items: center;
+  justify-content: space-between; /* <--- Esto es lo importante */
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 70px;
+  background-color: var(--bg-header);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  
 }
 
 .hamburger-menu {
@@ -185,11 +196,13 @@ nav#desktop-nav {
   right: 0;
   background-color: var(--bg-card);
   width: 180px;
-  max-height: 0;
+  max-height: 0;    /* <- Oculto por defecto */
   overflow: hidden;
   box-shadow: 0 2px 6px var(--card-shadow);
   transition: all 0.3s ease-in-out;
   border-radius: 0 0 8px 8px;
+  pointer-events: none;  /* Bloquea clics cuando está cerrado */
+  opacity: 0;
 }
 
 .menu-links li {
@@ -204,7 +217,9 @@ nav#desktop-nav {
 }
 
 .menu-links.open {
-  max-height: 240px;
+  max-height: 240px;  /* <- Visible */
+  pointer-events: auto;
+  opacity: 1;
 }
 
 /* Icono abierto/cerrado */
@@ -953,32 +968,11 @@ footer .nav-links a:hover {
   animation: fadeInUp 1s 0.2s both;
 }
 
-.contact-form-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-}
 
-.contact-info-card {
-  background: var(--bg-card);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px var(--card-shadow);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  transition: transform 0.22s cubic-bezier(.38,1.14,.32,1.02);
-  border-left: 4px solid var(--accent-orange);
-}
 
-.contact-info-card:hover {
-  transform: translateY(-3px) scale(1.022);
-  box-shadow: 0 6px 24px var(--card-shadow);
-  background: #fff8f1;
-}
+
+
+
 
 .contact-link {
   color: var(--accent-link);
@@ -1044,14 +1038,7 @@ footer .nav-links a:hover {
 
 /* Responsive for mobiles */
 @media (max-width: 600px) {
-  .contact-form-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .contact-info-card {
-    padding: 1rem 0.6rem;
-    font-size: 1rem;
-  }
+  
   .contact-section {
     padding: 4rem 0.5rem 2rem;
   }

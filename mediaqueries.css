@@ -3,11 +3,19 @@
 /* Ajustes para pantallas de ancho <= 1400px */
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
+    /*height: 83vh;*/
     margin-bottom: 6rem;
   }
   /* .about-containers ya no se usa en la versión actual, 
      si fuera necesario podría aplicarse a contenedores flex de "about" */
+}
+
+/* Por defecto: escritorio */
+#desktop-nav {
+  display: flex;
+}
+#hamburger-nav {
+  display: none;
 }
 
 /* Ajustes para pantallas de ancho <= 1200px */
@@ -50,12 +58,9 @@
 
 /* Ajustes para pantallas de ancho <= 600px */
 @media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
-  }
+ 
   #profile {
-    height: 83vh;
+    /*height: 83vh;*/
     margin-bottom: 0;
   }
   article {
@@ -135,3 +140,17 @@
     right: 1rem;
   }
 }
+
+@media (max-width: 900px) {
+  footer .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #scrollToTop {
+    display: none !important;
+  }
+}
+
+

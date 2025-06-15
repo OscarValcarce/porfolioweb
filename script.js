@@ -12,6 +12,28 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
+// Forzar autocierre al hacer clic en cualquier link del menú hamburguesa
+document.querySelectorAll("#hamburger-nav .menu-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("#hamburger-nav .menu-links").classList.remove("open");
+    document.querySelector("#hamburger-nav .hamburger-icon").classList.remove("open");
+  });
+});
+
+// Cierra el menú hamburguesa si haces clic fuera
+document.addEventListener("click", function(e) {
+  const menu = document.querySelector("#hamburger-nav .menu-links");
+  const icon = document.querySelector("#hamburger-nav .hamburger-icon");
+  if (
+    menu.classList.contains("open") &&
+    !menu.contains(e.target) &&
+    !icon.contains(e.target)
+  ) {
+    menu.classList.remove("open");
+    icon.classList.remove("open");
+  }
+});
+
 /*-----------------------------------------
   1. EFECTOS AL CARGAR Y FADE-IN DE SECCIONES
 -----------------------------------------*/
