@@ -5,6 +5,10 @@
 -----------------------------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  console.log("DOM Ready!");
+  const cards = document.querySelectorAll('.project-card');
+  console.log("Project cards encontrados:", cards.length);
 // Toggle hamburger menu
   function toggleMenu() {
     const menu = document.querySelector(".menu-links");
