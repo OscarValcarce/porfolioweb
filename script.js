@@ -57,25 +57,6 @@ window.addEventListener("load", () => {
   faders.forEach((f) => appearOnScroll.observe(f));
 });
 
-/*-----------------------------------------
-  2. BOTÓN SCROLL-TO-TOP
------------------------------------------*/
-const scrollBtn = document.getElementById("scrollToTop");
-window.addEventListener("scroll", () => {
-  if (pageYOffset > 300) {
-    if (scrollBtn.style.display !== "block") {
-      scrollBtn.style.display = "block";
-      scrollBtn.style.opacity = "0";
-      setTimeout(() => (scrollBtn.style.opacity = "1"), 10);
-    }
-  } else if (scrollBtn.style.display === "block") {
-    scrollBtn.style.opacity = "0";
-    setTimeout(() => (scrollBtn.style.display = "none"), 300);
-  }
-});
-scrollBtn.addEventListener("click", () =>
-  window.scrollTo({ top: 0, behavior: "smooth" })
-);
 
 /*-----------------------------------------
   3. OCULTAR NAVBAR EN FOOTER
@@ -135,8 +116,16 @@ window.addEventListener("click", (e) => {
 });
 
 function closeModal(modal) {
-  modal.classList.remove("open");
-  document.body.classList.remove("no-scroll");  // reactiva scroll
+  // 1. Añade la clase .closing al modal-content para animación de salida
+  const content = modal.querySelector('.modal-content');
+  content.classList.add('closing');
+
+  // 2. Espera el tiempo de la animación (400ms) y luego cierra
+  setTimeout(() => {
+    modal.classList.remove('open');
+    content.classList.remove('closing'); // Limpia para la próxima vez
+    document.body.classList.remove("no-scroll");  // reactiva scroll
+  }, 230); // igual al tiempo de transición del CSS
 }
 
 /* effecto typewriter */
@@ -188,3 +177,20 @@ function type() {
 
 // Start typing on page load
 document.addEventListener("DOMContentLoaded", type);
+
+// Cierra el modal si se hace clic en cualquier enlace 'contact me' dentro del modal
+document.querySelectorAll('.modal-contact-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    // Evita que el navegador haga el scroll por defecto
+    e.preventDefault();
+
+    // Encuentra el modal más cercano
+    const modal = this.closest('.modal');
+    if (modal) closeModal(modal);
+
+    // Después de cerrar el modal (con animación), haz scroll a #contact suavemente
+    setTimeout(() => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }, 410); // espera un poco más que la animación de cierre (400ms)
+  });
+});

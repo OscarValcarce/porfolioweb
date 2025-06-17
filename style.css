@@ -425,7 +425,8 @@ section {
   font-weight: 600;
   transition: all 300ms ease;
   padding: 1rem;
-  width: 8rem;
+  
+  width: 10rem;
   margin-bottom: 2rem;
   border-radius: 2rem;
   position: relative;
@@ -730,10 +731,13 @@ section {
 
 /* Animacion typewriter */
 #typewriter-text {
+  min-height: 2.4em;
   font-family: monospace;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;      /* Permite saltos de línea */
+  overflow-wrap: break-word;  /* Rompe palabras largas si es necesario */
+  word-break: break-word;
   display: inline-block;
+  width: 100%;  
 }
 
 
@@ -913,7 +917,7 @@ footer .nav-links a:hover {
   max-height: 90%;
   overflow-y: auto;
   position: relative;
-
+  will-change: opacity, transform;
   opacity: 0;
   transform: translateY(-24px) scale(0.96);
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -1143,4 +1147,11 @@ footer .nav-links a:hover {
   .award-minimal {
     padding-bottom: 0.8rem;
   }
+}
+
+/* --- Modal Exit Animation --- */
+.modal-content.closing {
+  opacity: 0 !important;
+  transform: translateY(-24px) scale(0.96) !important;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }

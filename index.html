@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Óscar's Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/ic.png">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <!-- Scroll-to-top button -->
-    <button id="scrollToTop" title="Back to top">
-      <img src="assets/arrow-up.png" alt="Back to top" />
-    </button>
+    
 
     <nav id="desktop-nav" class="fade-element">
       <div class="logo">O</div>
@@ -49,14 +47,16 @@
     <section id="profile" class="fade-element">
       <div class="section__text">
         <h1 class="title name-title">Óscar's Portfolio</h1>
-        <p class="section__text__p2">CS &amp; AI Student</p>
+        <p class="section__text__p2">BSc Artificial Intelligence Student</p>
         <div class="btn-container">
+          <!-- Button to download CV
           <button
             class="btn btn-color-1"
             onclick="window.open('./assets/resume-example.pdf')"
           >
             Download CV
           </button>
+ -->
           <button class="btn-special" onclick="location.href='#contact'">
             Contact Info
           </button>
@@ -70,12 +70,7 @@
       <div class="about-details-container">
         <div class="text-container about-zoom fade-element">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-            reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem
-            nobis, nihil esse debitis maxime facere minus sint delectus velit in eos
-            quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum
-            cum laboriosam corrupti quidem, reiciendis ea magnam? Nulla, impedit fuga!
-          </p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat ducimus delectus ut repellat perferendis. Aliquid dolore, nihil ea asperiores pariatur earum at, quisquam reiciendis ratione sint aliquam dolores iure quasi.
         </div>
       </div>
     </section>
@@ -360,7 +355,7 @@
     <!-- Modals -->
     <div id="modal-1" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>Ideology Classifier for Tweets</h3>
         <p>
           <br>🔍 <b>Problem Context</b><br>
@@ -393,7 +388,7 @@
           • Moderation support tools to detect ideological bias or polarization<br>
           • Academic research in computational social science<br>
 
-          <br><br>🔗 <b>For more information, please <a href="#contact">contact me</a>. Project report and code available upon request</b>
+          <br><br>🔗 <b>For more information, please <a href="#contact" class="modal-contact-link">contact me</a>. Project report and code available upon request</b>
           <br><br>🔗 <b>Repository</b>...<br>
         </p>
 
@@ -403,7 +398,7 @@
     </div>
     <div id="modal-2" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>Smart Sewer Monitoring System with Ultra-Low Power Design</h3>
         <p><br>🔍 <b>Problem Context</b><br>
           Urban flooding can cause severe damage to infrastructure and public safety. Traditional monitoring systems are expensive and reactive, lacking predictive insights
@@ -435,7 +430,7 @@
           • Emergency resource allocation during storms<br>
           • Smart city integration with public safety platforms<br>
           
-          <br><br>🔗 <b>For more information, please <a href="#contact">contact me</a>. Project report and code available upon request</b>
+          <br><br>🔗 <b>For more information, please <a href="#contact" class="modal-contact-link">contact me</a>. Project report and code available upon request</b>
           <br><br>🔗 <b>Repository</b>...<br>
         </p>
         
@@ -444,7 +439,7 @@
     </div>
     <div id="modal-3" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>Biodiversity Planning for Ecosystem Restoration</h3>
         <p></p>
         <div class="modal-images"></div>
@@ -452,7 +447,7 @@
     </div>
     <div id="modal-4" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>Optimized Humanitarian Aid Delivery Routing</h3>
         <p></p>
         <div class="modal-images"></div>
@@ -460,7 +455,7 @@
     </div>
     <div id="modal-5" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>AR-ID: Augmented Reality Identification System</h3>
         <p><br>🔍 <b>Problem Context</b><br>
           In various professional or educational environments (e.g. museums, warehouses, classrooms, factories), users interact with physical items that need fast identification, tracking, and visualization of related digital content<br>
@@ -495,7 +490,7 @@
           • Museum guides: Visitors use a mobile device to scan exhibit cards and see 3D reconstructions of ancient artifacts or artworks<br>
           • Maintenance systems: Technicians scan equipment templates to get visual overlays of internal components or instructions<br>
           
-          <br><br>🔗 <b>For more information, please <a href="#contact">contact me</a>. Project report and code available upon request</b>
+          <br><br>🔗 <b>For more information, please <a href="#contact" class="modal-contact-link">contact me</a>. Project report and code available upon request</b>
           <br><br>🔗 <b>Repository</b>...<br>
         </p>
         <div class="modal-images"></div>
@@ -503,7 +498,7 @@
     </div>
     <div id="modal-6" class="modal">
       <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close" aria-label="Close modal" tabindex="0">&times;</span>
         <h3>Coming soon</h3>
         <p></p>
         <div class="modal-images"></div>
@@ -557,7 +552,7 @@
           <div class="award-minimal-content">
             <h3 class="award-minimal-title">1st place Reinforcement Learning Hackathon</h3>
             <span class="award-minimal-org">Google Developers</span>
-            <p class="award-minimal-desc">Outstanding academic performance and research contributions, 2024.</p>
+            <p class="award-minimal-desc">Awarded 1st prize among a diverse international cohort of participants</p>
           </div>
         </div>
         <div class="award-minimal">
@@ -567,7 +562,7 @@
           <div class="award-minimal-content">
             <h3 class="award-minimal-title">2nd place NLP model for political ideology classification</h3>
             <span class="award-minimal-org">Rey Juan Carlos University</span>
-            <p class="award-minimal-desc">Winner of the 2023 AI Innovation Challenge for an original ML solution.</p>
+            <p class="award-minimal-desc">Achieved top-2 performance by macro F1 score</p>
           </div>
         </div>
       </div>

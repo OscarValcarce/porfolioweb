@@ -135,10 +135,7 @@
   .prog-list {
     gap: 1rem;
   }
-  #scrollToTop {
-    bottom: 1rem;
-    right: 1rem;
-  }
+
 }
 
 @media (max-width: 900px) {
